@@ -42,7 +42,7 @@ let exit = document.querySelector(".exit");
 let livechat = document.querySelector(".livechat");
 let chat = document.querySelector(".chat");
 const uint32 = window.crypto.getRandomValues(new Uint32Array(1))[0];
-const socket = io("http://localhost:5001");
+const socket = io("https://dbchatai.onrender.com");
 
 let con = socket?.on("connection", () => "connected");
 
