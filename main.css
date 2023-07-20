@@ -1,9 +1,11 @@
+
 body {
  margin: 0;
  height: 100vh;
  font-family: 'Nunito';
  background: rgb(235, 235, 235);
 }
+
 svg.bubble {
     position: absolute;
     width: 4em;
@@ -12,7 +14,7 @@ svg.bubble {
     cursor: pointer;
 }
 .livechat{
-    background: white;
+    background: #efeeee;
     position: absolute;
     right: 2em;
     bottom: 2em;
@@ -24,8 +26,13 @@ svg.bubble {
     
    
 }
+.videox{
+    justify-content: center;
+    align-self: center;
+    padding-top: 20px;
+}
 .livechat .head{
-    background: #5200FF;
+    background: #8c0fca;
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -40,9 +47,23 @@ svg.bubble {
 }
 .livechat .content{
     padding: 1em;
+   
+}
+.typemessa{
+    display: flex;
+    justify-self: flex-start;
+    background: #FFF;
+    border-radius: 1.125rem 1.125rem 1.125rem 0;
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
 }
 .livechat .chat{
     height: 300px;
+    width: 100%;
+    display: flex;
+	flex-direction: column;
     overflow-y: scroll;
    
 }
@@ -53,24 +74,99 @@ svg.bubble {
     }
 
 ::-webkit-scrollbar-thumb { background-color: #5200FF;height: 10px; -webkit-border-radius: 1ex; }
-.livechat .name {
-    font-weight: bold;
-    margin-bottom: 0;
-    margin-top: 0;
-}
 .livechat .msg {
-    margin-top: 12px;
+    margin-top: 0px;
     margin-bottom: 0;
+  
+   
+}
+
+
+.livechat .typing {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0rem;
+    box-sizing: border-box;
+    background: #ccc;
+    border-radius: 50%;
+
+    &.typing-1 {
+        animation: typing 3s infinite;
+    }
+    &.typing-2 {
+        animation: typing 3s 250ms infinite;
+    }
+    &.typing-3 {
+        animation: typing 3s 500ms infinite;
+    }
+}
+
+.livechat .time {
+    font-size: 0.8rem;
+    background:  #EEE;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    color: #999;
+    width: fit-content;
+    margin: 0 auto;
+}
+.username {
+    background:  #EEE;
+    border-radius: 2rem;
+    color: #999;
+    width: fit-content;
+    margin: 0 auto;
 }
 .livechat .messageoOperator{
-    margin-bottom: 12px;
+   
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    background: #FFF;
+    border-radius: 1.125rem 1.125rem 1.125rem 0;
+    height:  fit-content;
+    width: fit-content;
+  
+    box-shadow: 
+        0 0 2rem rgba(black, 0.075),
+        0rem 1rem 1rem -1rem rgba(black, 0.1);
+
+
 }
-.livechat .messageoOperator .name {
-    color: #5200FF;
+.livechat .messageoOperator .msg{
+   
+    color: black;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 10px;
+   
+
+
 }
+
 .livechat .messageUser {
-    text-align: right;
-    margin-right: 1em;
+   
+    align-self: flex-end;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    background: #8c0fca;
+    border-radius: 1.125rem 1.125rem 1.125rem 0;
+    height:  fit-content;
+    width: fit-content;
+    
+  
+    box-shadow: 
+        0 0 2rem rgba(black, 0.075),
+        0rem 1rem 1rem -1rem rgba(black, 0.1);
+
+ 
+
+}
+.livechat .messageUser .msg{
+   
+    color: white;
+ 
 
 }
 .livechat .send-container {
@@ -87,7 +183,7 @@ svg.bubble {
 }
 .livechat .send-container  input[type="submit"] {
     padding: 1em;
-    background: #5200FF;
+    background: #8c0fca;
     color: white;
     border: none;
     font-weight:bold ;
@@ -153,4 +249,17 @@ script {
         clip-path: circle(0% at 100% 100% );
     
     }
+}
+@keyframes typing {
+	0%,
+	75%,
+	100% {
+		transform: translate(0, 0.25rem) scale(0.9);
+		opacity: 0.5;
+	}
+
+	25% {
+		transform: translate(0, -0.25rem) scale(1);
+		opacity: 1;
+	}
 }
