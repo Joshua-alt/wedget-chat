@@ -59,8 +59,8 @@ var xtime3 ="Today at "+ ' ' +  hour+':'+minute+':'+second
 timeclass.textContent=xtime3
 const uint32 = window.crypto.getRandomValues(new Uint32Array(1))[0];
 
-//const socket = io("https://dbchatai.onrender.com");
-const socket = io("http://localhost:5001");
+const socket = io("https://dbchatai.onrender.com");
+//const socket = io("http://localhost:5001");
 let con = socket?.on("connection", () => "connected");
 console.log("con", con)
 bubbe.addEventListener("click", () => {
